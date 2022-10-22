@@ -8,9 +8,7 @@ import {
   scrapeAnimeMovies,
   scrapePopularAnime,
   scrapeRecentPage,
-  scrapeOngoingSeries,
   scrapeAnimeList,
-  scrapeRecentlyAdded,
   scrapeAnimeAZ,
   scrapeAnimeAZPage,
   scrapeNewSeason,
@@ -52,7 +50,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.status(200).json('WORKING');
+  res.status(200).json('Suck aayushs dick, this works fine');
 });
 
 app.get('/search', async (req, res) => {
@@ -71,37 +69,6 @@ app.get('/search', async (req, res) => {
     });
   }
 });
-
-app.get('/getRecentlyAdded', async (req, res) => {
-  try {
-    const page = req.query.page;
-    const data = await scrapeRecentlyAdded({ page: page });
-
-    res.status(200).json(data);
-  } catch (err) {
-    res.status(500).json({
-      status: 500,
-      error: 'Internal Error',
-      message: err,
-    });
-  }
-});
-
-app.get('/getOngoingSeries', async (req, res) => {
-  try {
-    const page = req.query.page;
-    const data = await scrapeOngoingSeries({ page: page });
-
-    res.status(200).json(data);
-  } catch (err) {
-    res.status(500).json({
-      status: 500,
-      error: 'Internal Error',
-      message: err,
-    });
-  }
-});
-
 
 app.get('/searchPage', async (req, res) => {
   try {
@@ -142,7 +109,7 @@ app.get('/anime-AZ-page', async (req, res) => {
     const aph = req.query.aph
     const page = req.query.page;
 
-    const data = await scrapeAnimeAZPage({ aph: aph, page: page });
+    const data = await scrapeAnimeAZPage({aph: aph, page: page });
 
     res.status(200).json(data);
   } catch (err) {
@@ -174,7 +141,7 @@ app.get('/animeList', async (req, res) => {
   try {
     const page = req.query.page;
 
-    const data = await scrapeAnimeList({ page: page });
+    const data = await scrapeAnimeList({page: page});
 
     res.status(200).json(data);
   } catch (err) {
@@ -191,7 +158,7 @@ app.get('/animeListAZ', async (req, res) => {
     const aph = req.query.aph;
     const page = req.query.page;
 
-    const data = await scrapeAnimeAZ({ aph: aph, page: page });
+    const data = await scrapeAnimeAZ({aph: aph , page: page});
 
     res.status(200).json(data);
   } catch (err) {
