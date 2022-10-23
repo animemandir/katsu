@@ -6,7 +6,7 @@
     "type": "module",
     "types": "lib/types/index.d.ts",
     "scripts": {
-        "start": "node ."
+        "start": "node index.js"
     },
     "keywords": [
         "anime",
