@@ -50,7 +50,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.status(200).json('Suck aayushs dick, this works fine');
+  res.status(200).json('WORKING');
 });
 
 app.get('/search', async (req, res) => {
