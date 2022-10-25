@@ -1,1 +1,0 @@
-Aight bet this shi crazy. that's to riimuru.
